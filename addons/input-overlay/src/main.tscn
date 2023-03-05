@@ -1,0 +1,244 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqcgkdrx4yu5y"]
+
+[ext_resource type="Script" path="res://addons/input-overlay/src/logic.gd" id="1_0fihu"]
+[ext_resource type="Texture2D" uid="uid://bwr280glup4t3" path="res://addons/input-overlay/assets/mouse.png" id="2_n04t4"]
+[ext_resource type="Script" path="res://addons/input-overlay/src/mouse_buttons.gd" id="3_qap3e"]
+[ext_resource type="Texture2D" uid="uid://bq70nyxmev688" path="res://addons/input-overlay/assets/mouseRight.png" id="4_srijh"]
+[ext_resource type="Texture2D" uid="uid://cw2m672murhol" path="res://addons/input-overlay/assets/mouseLeft.png" id="5_cn1fm"]
+[ext_resource type="Texture2D" uid="uid://pcvp4qjkr35e" path="res://addons/input-overlay/assets/mouseMiddle.png" id="6_lxu8l"]
+[ext_resource type="Script" path="res://addons/input-overlay/src/KeyPressed.gd" id="7_e62tv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj8ww"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.0313726, 0.141176, 0.141176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_r22tw"]
+Panel/styles/panel = SubResource("StyleBoxFlat_bj8ww")
+
+[node name="ColorRect" type="ColorRect"]
+custom_minimum_size = Vector2(480, 180)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 344.0
+offset_top = -400.0
+offset_right = 694.0
+offset_bottom = -220.0
+grow_vertical = 0
+scale = Vector2(0.984796, 0.990166)
+theme = SubResource("Theme_r22tw")
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.0627451)
+script = ExtResource("1_0fihu")
+
+[node name="Control" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 2
+
+[node name="MouseOverlay" type="TextureRect" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+texture = ExtResource("2_n04t4")
+expand_mode = 3
+script = ExtResource("3_qap3e")
+lmb = ExtResource("4_srijh")
+rmb = ExtResource("5_cn1fm")
+mmb = ExtResource("6_lxu8l")
+idle = ExtResource("2_n04t4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+
+[node name="Panel4" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel4"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "Q"
+
+[node name="Panel2" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel2"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "W"
+
+[node name="Panel3" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel3"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "E"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel4"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Shift"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "Shift"
+
+[node name="Panel" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "A"
+
+[node name="Panel2" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel2"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "S"
+
+[node name="Panel3" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel3"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "D"
+
+[node name="Panel5" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel5"]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_e62tv")
+key = "F"
