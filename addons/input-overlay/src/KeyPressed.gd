@@ -1,31 +1,24 @@
 @tool
 extends Label
 
-@export var key: String : set = _set_key
 @onready var panel: Panel = get_parent() 
+@export var keycode: Key
 
 
 func _ready():
-	panel.modulate.a = 0.4
-	modulate.a = 0.2
-
+	set_highlight(false)
+	set_process(panel != null)
+	assert(panel, "Parent panel is required to work")
 	
-func _set_key(v: String):
-	if len(v) == 1:
-		key = v.to_upper()
+	
+func set_highlight(highlight: bool):
+	if highlight:
+		panel.modulate.a = 1.0
+		modulate.a = 1.0
 	else:
-		key = v
-	text = key
-	
-	
-func _input(event):
-	if !panel:
-		return
-	if event is InputEventKey:
-		if event.as_text_key_label() == key:
-			if event.pressed:
-				panel.modulate.a = 1.0
-				modulate.a = 1.0
-			else:
-				panel.modulate.a = 0.4
-				modulate.a = 0.2
+		panel.modulate.a = 0.4
+		modulate.a = 0.2
+
+
+func _process(delta):
+	set_highlight(Input.is_key_pressed(keycode))

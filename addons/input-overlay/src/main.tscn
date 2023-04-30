@@ -29,9 +29,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 344.0
-offset_top = -400.0
-offset_right = 694.0
-offset_bottom = -220.0
+offset_top = -448.0
+offset_right = 824.0
+offset_bottom = -268.0
 grow_vertical = 0
 scale = Vector2(0.984796, 0.990166)
 theme = SubResource("Theme_r22tw")
@@ -101,7 +101,7 @@ text = "Q"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "Q"
+keycode = 81
 
 [node name="Panel2" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
@@ -120,7 +120,7 @@ text = "W"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "W"
+keycode = 87
 
 [node name="Panel3" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
@@ -139,7 +139,7 @@ text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "E"
+keycode = 69
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -165,7 +165,7 @@ text = "Shift"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "Shift"
+keycode = 4194325
 
 [node name="Panel" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
@@ -184,7 +184,7 @@ text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "A"
+keycode = 65
 
 [node name="Panel2" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
@@ -203,7 +203,7 @@ text = "S"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "S"
+keycode = 83
 
 [node name="Panel3" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
@@ -222,7 +222,7 @@ text = "D"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "D"
+keycode = 68
 
 [node name="Panel5" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
@@ -241,4 +241,4 @@ text = "F"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_e62tv")
-key = "F"
+keycode = 70
