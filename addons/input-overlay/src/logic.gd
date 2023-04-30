@@ -13,7 +13,6 @@ var mmb = false
 
 
 func handle_events():
-	var controls = get_node("Control")
 	if lmb:
 		mouse_overlay.set_mouse_pressed(true, "lmb")
 	elif rmb:
@@ -31,5 +30,13 @@ func receive_input(event):
 		mmb = event.button_index == MOUSE_BUTTON_MIDDLE and event.pressed
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE and event.pressed:
-			visible = !visible
+			disable() if visible == true else enable()
 	handle_events()
+
+
+func enable():
+	show()
+
+
+func disable():
+	hide()
