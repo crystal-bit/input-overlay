@@ -1,14 +1,29 @@
 @tool
 extends EditorPlugin
 
-var panel: InputOverlay
+var panel: OverlayWidget
+var main_screen
+var conf = preload("res://addons/input-overlay/input-overlay-config.tres")
 
 
 func _enter_tree():
-	panel = load("res://addons/input-overlay/src/main.tscn").instantiate()
+	# init
+	panel = load("res://addons/input-overlay/overlay-widget/overlay-widget.tscn").instantiate()
 	connect("main_screen_changed", on_main_screen_changed)
+	main_screen = get_editor_interface().get_editor_main_screen()
 	var base_control := get_editor_interface().get_base_control()
 	base_control.add_child(panel)
+	# layout
+	main_screen.resized.connect(position_widget)
+	position_widget()
+
+
+func position_widget():
+	var rect: Rect2 = main_screen.get_global_rect()
+	panel.position.x = rect.position.x
+	panel.position.y = rect.position.y + rect.size.y - panel.get_rect().size.y
+	panel.position.x += conf.margin_left
+	panel.position.y -= conf.margin_bottom
 
 
 func on_main_screen_changed(scrn):

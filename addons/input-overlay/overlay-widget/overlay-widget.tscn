@@ -1,19 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqcgkdrx4yu5y"]
+[gd_scene load_steps=11 format=3 uid="uid://dqcgkdrx4yu5y"]
 
-[ext_resource type="Script" path="res://addons/input-overlay/src/logic.gd" id="1_0fihu"]
-[ext_resource type="Texture2D" uid="uid://xatbexiouyoq" path="res://addons/input-overlay/assets/Mouse_Simple_Key_Light.png" id="2_hjlml"]
-[ext_resource type="Script" path="res://addons/input-overlay/src/mouse_buttons.gd" id="3_qap3e"]
-[ext_resource type="Texture2D" uid="uid://wfidj4t7us5l" path="res://addons/input-overlay/assets/Mouse_Left_Key_Light.png" id="4_k8whl"]
-[ext_resource type="Texture2D" uid="uid://bkenyb8eqciof" path="res://addons/input-overlay/assets/Mouse_Right_Key_Light.png" id="5_xkebh"]
-[ext_resource type="Texture2D" uid="uid://cpbkjluvmuecy" path="res://addons/input-overlay/assets/Mouse_Middle_Key_Light.png" id="6_ryuwb"]
-[ext_resource type="Script" path="res://addons/input-overlay/src/KeyPressed.gd" id="7_e62tv"]
+[ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/overlay-widget.gd" id="1_5voxu"]
+[ext_resource type="Texture2D" uid="uid://xatbexiouyoq" path="res://addons/input-overlay/assets/Mouse_Simple_Key_Light.png" id="2_jyvwp"]
+[ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/mouse-buttons.gd" id="3_pw4u8"]
+[ext_resource type="Texture2D" uid="uid://wfidj4t7us5l" path="res://addons/input-overlay/assets/Mouse_Left_Key_Light.png" id="4_xux2b"]
+[ext_resource type="Texture2D" uid="uid://bkenyb8eqciof" path="res://addons/input-overlay/assets/Mouse_Right_Key_Light.png" id="5_nv1oe"]
+[ext_resource type="Texture2D" uid="uid://cpbkjluvmuecy" path="res://addons/input-overlay/assets/Mouse_Middle_Key_Light.png" id="6_hswh8"]
+[ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/key-label.gd" id="7_strd5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj8ww"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.0313726, 0.141176, 0.141176, 1)
+bg_color = Color(0.215686, 0.270588, 0.337255, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -23,30 +23,25 @@ corner_detail = 5
 [sub_resource type="Theme" id="Theme_r22tw"]
 Panel/styles/panel = SubResource("StyleBoxFlat_bj8ww")
 
-[node name="ColorRect" type="ColorRect"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m5p6"]
+bg_color = Color(0.129412, 0.14902, 0.180392, 0.784314)
+
+[node name="OverlayWidget" type="Panel"]
 custom_minimum_size = Vector2(480, 180)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 801.0
-offset_top = -784.0
-offset_right = 1281.0
-offset_bottom = -604.0
-grow_vertical = 0
+offset_right = 748.0
+offset_bottom = 259.0
+rotation = -0.00739503
 scale = Vector2(0.984796, 0.990166)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = SubResource("Theme_r22tw")
-color = Color(0.129412, 0.129412, 0.129412, 0.254902)
-script = ExtResource("1_0fihu")
+theme_override_styles/panel = SubResource("StyleBoxFlat_8m5p6")
+script = ExtResource("1_5voxu")
 
 [node name="Control" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+offset_right = 748.0
+offset_bottom = 259.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 2
@@ -55,13 +50,13 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
-texture = ExtResource("2_hjlml")
+texture = ExtResource("2_jyvwp")
 expand_mode = 3
-script = ExtResource("3_qap3e")
-lmb = ExtResource("4_k8whl")
-rmb = ExtResource("5_xkebh")
-mmb = ExtResource("6_ryuwb")
-idle = ExtResource("2_hjlml")
+script = ExtResource("3_pw4u8")
+lmb = ExtResource("4_xux2b")
+rmb = ExtResource("5_nv1oe")
+mmb = ExtResource("6_hswh8")
+idle = ExtResource("2_jyvwp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
@@ -71,7 +66,7 @@ layout_mode = 2
 
 [node name="Panel" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel"]
@@ -84,11 +79,11 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 
 [node name="Panel4" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel4"]
@@ -102,12 +97,12 @@ grow_vertical = 2
 text = "Q"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 81
 
 [node name="Panel2" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel2"]
@@ -121,12 +116,12 @@ grow_vertical = 2
 text = "W"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 87
 
 [node name="Panel3" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer/Panel3"]
@@ -140,7 +135,7 @@ grow_vertical = 2
 text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 69
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/HBoxContainer/VBoxContainer"]
@@ -152,7 +147,7 @@ layout_mode = 2
 
 [node name="Panel4" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel4"]
@@ -166,12 +161,12 @@ grow_vertical = 2
 text = "Shift"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 4194325
 
 [node name="Panel" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel"]
@@ -185,12 +180,12 @@ grow_vertical = 2
 text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 65
 
 [node name="Panel2" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel2"]
@@ -204,12 +199,12 @@ grow_vertical = 2
 text = "S"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 83
 
 [node name="Panel3" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel3"]
@@ -223,12 +218,12 @@ grow_vertical = 2
 text = "D"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 68
 
 [node name="Panel5" type="Panel" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Panel5"]
@@ -242,5 +237,5 @@ grow_vertical = 2
 text = "F"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_e62tv")
+script = ExtResource("7_strd5")
 keycode = 70

@@ -1,6 +1,6 @@
 @tool
-extends Control
-class_name InputOverlay
+extends Panel
+class_name OverlayWidget
 
 @onready var mouse_overlay = %MouseOverlay
 
@@ -30,9 +30,9 @@ func receive_input(event):
 		lmb = event.button_index == MOUSE_BUTTON_LEFT and event.pressed
 		rmb = event.button_index == MOUSE_BUTTON_RIGHT and event.pressed
 		mmb = (event.button_index in [MOUSE_BUTTON_MIDDLE, MOUSE_BUTTON_WHEEL_DOWN, MOUSE_BUTTON_WHEEL_UP] and event.pressed)
-	if event is InputEventKey:
-		if event.keycode == KEY_ESCAPE and event.pressed:
-			disable() if visible == true else enable()
+#	if event is InputEventKey:
+#		if event.keycode == KEY_ESCAPE and event.pressed:
+#			disable() if visible == true else enable()
 	handle_events()
 
 
