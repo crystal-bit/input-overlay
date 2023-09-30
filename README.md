@@ -4,7 +4,7 @@ Simple overlay used to show input events during tutorials.
 
 It works only as a Godot addon.
 
-![image](https://user-images.githubusercontent.com/6860637/224542613-44beec38-59f8-42db-9791-663c2fbe5e10.png)
+![animated preview](https://github.com/crystal-bit/input-overlay/assets/6860637/1e7d4863-1a41-47ba-9ebf-51dd90a38ed8)
 
 ### License
 
