@@ -12,11 +12,11 @@ func _enter_tree():
 
 
 func on_main_screen_changed(scrn):
-	if scrn == "3D":
+	if scrn == "3D" or scrn == "2D":
 		panel.enable()
 	else:
 		panel.disable()
-	
+
 
 func _exit_tree():
 	var base_control := get_editor_interface().get_base_control()
@@ -27,4 +27,4 @@ func _exit_tree():
 func _input(event):
 	if panel:
 		panel.receive_input(event)
-	
+
