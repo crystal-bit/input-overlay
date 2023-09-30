@@ -20,7 +20,3 @@ Overlay for:
 ### License
 
 MIT
-
-#### Assets
-
-Mouse overlay: https://kenney.nl/assets/ui-pack
