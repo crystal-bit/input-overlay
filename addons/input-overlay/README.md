@@ -1,5 +1,6 @@
 # Godot 4 - Input Overlay Addon
 
+<img width=200 src="https://raw.githubusercontent.com/crystal-bit/input-overlay/main/icon512px.png" />
 Simple overlay used to show input events during tutorials.
 
 ![animated preview](https://github.com/crystal-bit/input-overlay/assets/6860637/1e7d4863-1a41-47ba-9ebf-51dd90a38ed8)
