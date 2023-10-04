@@ -1,19 +1,17 @@
 @tool
-extends TextureRect
+extends CenterContainer
 
+var button_overlays = {}
 
-@export var lmb: Texture
-@export var rmb: Texture
-@export var mmb: Texture
-@export var idle: Texture
+@onready var lmb = $LMB
+@onready var mmb = $MMB
+@onready var rmb = $RMB
 
 
 func _ready():
-	texture = idle
+	button_overlays = {"lmb": lmb, "mmb": mmb, "rmb": rmb}
 
 
-func set_mouse_pressed(pressed: bool, tex_name: String = ""):
-	if pressed and tex_name != "":
-		texture = self[tex_name]
-	else:
-		texture = idle
+func update_mouse_overlay(buttons: Dictionary = {}):
+	for button in buttons:
+		button_overlays[button].visible = buttons[button]
