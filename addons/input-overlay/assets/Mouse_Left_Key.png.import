@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkenyb8eqciof"
-path="res://.godot/imported/Mouse_Right_Key_Light.png-a8c151fffc045126eb142aec4249623d.ctex"
+uid="uid://wfidj4t7us5l"
+path="res://.godot/imported/Mouse_Left_Key.png-091c8d57f878cabeaa19a22ebac88a8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/input-overlay/assets/Mouse_Right_Key_Light.png"
-dest_files=["res://.godot/imported/Mouse_Right_Key_Light.png-a8c151fffc045126eb142aec4249623d.ctex"]
+source_file="res://addons/input-overlay/assets/Mouse_Left_Key.png"
+dest_files=["res://.godot/imported/Mouse_Left_Key.png-091c8d57f878cabeaa19a22ebac88a8a.ctex"]
 
 [params]
 

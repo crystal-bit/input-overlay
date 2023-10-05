@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpbkjluvmuecy"
-path="res://.godot/imported/Mouse_Middle_Key_Light.png-113ceed4b1558785f98c8f3f2e36b834.ctex"
+path="res://.godot/imported/Mouse_Middle_Key.png-58eb752dc4ae6484ebedd5a824059b75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/input-overlay/assets/Mouse_Middle_Key_Light.png"
-dest_files=["res://.godot/imported/Mouse_Middle_Key_Light.png-113ceed4b1558785f98c8f3f2e36b834.ctex"]
+source_file="res://addons/input-overlay/assets/Mouse_Middle_Key.png"
+dest_files=["res://.godot/imported/Mouse_Middle_Key.png-58eb752dc4ae6484ebedd5a824059b75.ctex"]
 
 [params]
 
