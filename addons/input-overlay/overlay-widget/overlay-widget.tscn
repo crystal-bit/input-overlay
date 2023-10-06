@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqcgkdrx4yu5y"]
+[gd_scene load_steps=13 format=3 uid="uid://dqcgkdrx4yu5y"]
 
 [ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/overlay-widget.gd" id="1_5voxu"]
 [ext_resource type="Texture2D" uid="uid://xatbexiouyoq" path="res://addons/input-overlay/assets/Mouse_Simple_Key_Light.png" id="2_jyvwp"]
 [ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/mouse-buttons.gd" id="3_pw4u8"]
 [ext_resource type="Texture2D" uid="uid://wfidj4t7us5l" path="res://addons/input-overlay/assets/Mouse_Left_Key.png" id="4_cx3yb"]
 [ext_resource type="Texture2D" uid="uid://cpbkjluvmuecy" path="res://addons/input-overlay/assets/Mouse_Middle_Key.png" id="5_8ifuc"]
+[ext_resource type="Texture2D" uid="uid://plfhg51due7c" path="res://addons/input-overlay/assets/Mouse_Scroll_Down.png" id="6_f0j4k"]
 [ext_resource type="Texture2D" uid="uid://bkenyb8eqciof" path="res://addons/input-overlay/assets/Mouse_Right_Key.png" id="6_uqe7e"]
+[ext_resource type="Texture2D" uid="uid://f15fxkhvlwlr" path="res://addons/input-overlay/assets/Mouse_Scroll_Up.png" id="7_clq7a"]
 [ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/key-label.gd" id="7_strd5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj8ww"]
@@ -71,12 +73,29 @@ layout_mode = 2
 texture = ExtResource("5_8ifuc")
 expand_mode = 5
 
+[node name="MSD" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+visible = false
+custom_minimum_size = Vector2(184, 0)
+layout_mode = 2
+texture = ExtResource("6_f0j4k")
+expand_mode = 5
+
+[node name="MSU" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+visible = false
+custom_minimum_size = Vector2(184, 0)
+layout_mode = 2
+texture = ExtResource("7_clq7a")
+expand_mode = 5
+
 [node name="RMB" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
 visible = false
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 texture = ExtResource("6_uqe7e")
 expand_mode = 5
+
+[node name="ScrollTimer" type="Timer" parent="Control/HBoxContainer/MouseOverlay"]
+one_shot = true
 
 [node name="KeyboardOverlay" type="VBoxContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
@@ -259,3 +278,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 70
+
+[connection signal="timeout" from="Control/HBoxContainer/MouseOverlay/ScrollTimer" to="Control/HBoxContainer/MouseOverlay" method="_on_scroll_timer_timeout"]
