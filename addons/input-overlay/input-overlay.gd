@@ -16,15 +16,18 @@ func _enter_tree():
 	# layout
 	main_screen.resized.connect(position_widget)
 	position_widget()
-
+	scale_widget()
 
 func position_widget():
 	var rect: Rect2 = main_screen.get_global_rect()
 	panel.position.x = rect.position.x
-	panel.position.y = rect.position.y + rect.size.y - panel.get_rect().size.y
+	panel.position.y = rect.position.y + rect.size.y - (panel.get_rect().size.y * conf.scale)
 	panel.position.x += conf.margin_left
 	panel.position.y -= conf.margin_bottom
 
+func scale_widget():
+	var panel_scale = Vector2(conf.scale, conf.scale)
+	panel.scale = panel_scale
 
 func on_main_screen_changed(scrn):
 	if scrn == "3D" or scrn == "2D":
