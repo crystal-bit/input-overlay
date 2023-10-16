@@ -28,87 +28,88 @@ Panel/styles/panel = SubResource("StyleBoxFlat_bj8ww")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m5p6"]
 bg_color = Color(0.129412, 0.14902, 0.180392, 0.784314)
 
-[node name="OverlayWidget" type="Panel"]
-custom_minimum_size = Vector2(480, 180)
-offset_right = 748.0
-offset_bottom = 259.0
-scale = Vector2(0.984796, 0.990166)
-size_flags_horizontal = 0
-size_flags_vertical = 0
+[node name="OverlayWidget" type="PanelContainer"]
+offset_right = 732.0
+offset_bottom = 248.0
 theme = SubResource("Theme_r22tw")
 theme_override_styles/panel = SubResource("StyleBoxFlat_8m5p6")
 script = ExtResource("1_5voxu")
 
-[node name="Control" type="CenterContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-offset_right = 748.0
-offset_bottom = 259.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+[node name="Control" type="CenterContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="MouseOverlay" type="CenterContainer" parent="Control/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control"]
+layout_mode = 2
+
+[node name="MouseOverlay" type="CenterContainer" parent="MarginContainer/Control/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 script = ExtResource("3_pw4u8")
 
-[node name="BaseMouse" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+[node name="BaseMouse" type="TextureRect" parent="MarginContainer/Control/HBoxContainer/MouseOverlay"]
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 texture = ExtResource("2_jyvwp")
 expand_mode = 5
 
-[node name="LMB" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+[node name="LMB" type="TextureRect" parent="MarginContainer/Control/HBoxContainer/MouseOverlay"]
 visible = false
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 texture = ExtResource("4_cx3yb")
 expand_mode = 5
 
-[node name="MMB" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+[node name="MMB" type="TextureRect" parent="MarginContainer/Control/HBoxContainer/MouseOverlay"]
 visible = false
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 texture = ExtResource("5_8ifuc")
 expand_mode = 5
 
-[node name="MSD" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+[node name="MSD" type="TextureRect" parent="MarginContainer/Control/HBoxContainer/MouseOverlay"]
 visible = false
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 texture = ExtResource("6_f0j4k")
 expand_mode = 5
 
-[node name="MSU" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+[node name="MSU" type="TextureRect" parent="MarginContainer/Control/HBoxContainer/MouseOverlay"]
 visible = false
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 texture = ExtResource("7_clq7a")
 expand_mode = 5
 
-[node name="RMB" type="TextureRect" parent="Control/HBoxContainer/MouseOverlay"]
+[node name="RMB" type="TextureRect" parent="MarginContainer/Control/HBoxContainer/MouseOverlay"]
 visible = false
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 texture = ExtResource("6_uqe7e")
 expand_mode = 5
 
-[node name="ScrollTimer" type="Timer" parent="Control/HBoxContainer/MouseOverlay"]
+[node name="ScrollTimer" type="Timer" parent="MarginContainer/Control/HBoxContainer/MouseOverlay"]
 one_shot = true
 
-[node name="KeyboardOverlay" type="VBoxContainer" parent="Control/HBoxContainer"]
+[node name="KeyboardOverlay" type="VBoxContainer" parent="MarginContainer/Control/HBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/HBoxContainer/KeyboardOverlay"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -120,12 +121,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_strd5")
 
-[node name="Panel4" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
+[node name="Panel4" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel4"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel4"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -139,12 +140,12 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 81
 
-[node name="Panel2" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel2"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel2"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -158,12 +159,12 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 87
 
-[node name="Panel3" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
+[node name="Panel3" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel3"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer/Panel3"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -177,19 +178,19 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 69
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/HBoxContainer/KeyboardOverlay"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay"]
 layout_mode = 2
 
-[node name="Spacer" type="Control" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
+[node name="Spacer" type="Control" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Panel4" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
+[node name="Panel4" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel4"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel4"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -203,12 +204,12 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 4194325
 
-[node name="Panel" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
+[node name="Panel" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -222,12 +223,12 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 65
 
-[node name="Panel2" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
+[node name="Panel2" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel2"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel2"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -241,12 +242,12 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 83
 
-[node name="Panel3" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
+[node name="Panel3" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel3"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel3"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -260,12 +261,12 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 68
 
-[node name="Panel5" type="Panel" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
+[node name="Panel5" type="Panel" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.4)
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel5"]
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/KeyboardOverlay/HBoxContainer2/Panel5"]
 modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
@@ -279,4 +280,4 @@ vertical_alignment = 1
 script = ExtResource("7_strd5")
 keycode = 70
 
-[connection signal="timeout" from="Control/HBoxContainer/MouseOverlay/ScrollTimer" to="Control/HBoxContainer/MouseOverlay" method="_on_scroll_timer_timeout"]
+[connection signal="timeout" from="MarginContainer/Control/HBoxContainer/MouseOverlay/ScrollTimer" to="MarginContainer/Control/HBoxContainer/MouseOverlay" method="_on_scroll_timer_timeout"]
