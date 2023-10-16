@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqcgkdrx4yu5y"]
+[gd_scene load_steps=12 format=3 uid="uid://dqcgkdrx4yu5y"]
 
 [ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/overlay-widget.gd" id="1_5voxu"]
+[ext_resource type="Theme" uid="uid://dvmq4dlf8kbqa" path="res://addons/input-overlay/overlay-theme.theme" id="1_n1s5s"]
 [ext_resource type="Texture2D" uid="uid://xatbexiouyoq" path="res://addons/input-overlay/assets/Mouse_Simple_Key_Light.png" id="2_jyvwp"]
 [ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/mouse-buttons.gd" id="3_pw4u8"]
 [ext_resource type="Texture2D" uid="uid://wfidj4t7us5l" path="res://addons/input-overlay/assets/Mouse_Left_Key.png" id="4_cx3yb"]
@@ -10,37 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://f15fxkhvlwlr" path="res://addons/input-overlay/assets/Mouse_Scroll_Up.png" id="7_clq7a"]
 [ext_resource type="Script" path="res://addons/input-overlay/overlay-widget/key-label.gd" id="7_strd5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj8ww"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.215686, 0.270588, 0.337255, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="Theme" id="Theme_r22tw"]
-Panel/styles/panel = SubResource("StyleBoxFlat_bj8ww")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m5p6"]
 bg_color = Color(0.129412, 0.14902, 0.180392, 0.784314)
 
 [node name="OverlayWidget" type="PanelContainer"]
-offset_right = 732.0
-offset_bottom = 248.0
-theme = SubResource("Theme_r22tw")
+offset_right = 668.0
+offset_bottom = 184.0
+theme = ExtResource("1_n1s5s")
 theme_override_styles/panel = SubResource("StyleBoxFlat_8m5p6")
 script = ExtResource("1_5voxu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
 
 [node name="Control" type="CenterContainer" parent="MarginContainer"]
 layout_mode = 2
