@@ -14,14 +14,17 @@ func _enter_tree():
 	var base_control := get_editor_interface().get_base_control()
 	base_control.add_child(panel)
 	# layout
-	main_screen.resized.connect(position_widget)
-	position_widget()
+	main_screen.resized.connect(update_panel)
+	update_panel()
+
+func update_panel():
 	scale_widget()
+	position_widget()
 
 func position_widget():
 	var rect: Rect2 = main_screen.get_global_rect()
 	panel.position.x = rect.position.x
-	panel.position.y = rect.position.y + rect.size.y - (panel.get_rect().size.y * conf.scale)
+	panel.position.y = rect.position.y + rect.size.y - panel.get_rect().size.y
 	panel.position.x += conf.margin_left
 	panel.position.y -= conf.margin_bottom
 
