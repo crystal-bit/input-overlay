@@ -14,9 +14,12 @@ func _enter_tree():
 	var base_control := get_editor_interface().get_base_control()
 	base_control.add_child(panel)
 	# layout
-	main_screen.resized.connect(position_widget)
-	position_widget()
+	main_screen.resized.connect(update_panel)
+	update_panel()
 
+func update_panel():
+	scale_widget()
+	position_widget()
 
 func position_widget():
 	var rect: Rect2 = main_screen.get_global_rect()
@@ -25,6 +28,9 @@ func position_widget():
 	panel.position.x += conf.margin_left
 	panel.position.y -= conf.margin_bottom
 
+func scale_widget():
+	var panel_scale = Vector2(conf.scale, conf.scale)
+	panel.scale = panel_scale
 
 func on_main_screen_changed(scrn):
 	if scrn == "3D" or scrn == "2D":

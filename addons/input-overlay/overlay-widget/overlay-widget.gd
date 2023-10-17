@@ -1,6 +1,6 @@
 @tool
 class_name OverlayWidget
-extends Panel
+extends PanelContainer
 
 @onready var mouse_overlay = %MouseOverlay
 
