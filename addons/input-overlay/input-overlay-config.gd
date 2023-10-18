@@ -10,9 +10,7 @@ extends Resource
 enum Anchors { TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT }
 
 @export_category("Layout")
-@export var margin_top = 32
-@export var margin_right = 32
-@export var margin_bottom = 32
-@export var margin_left = 32
+@export var horizontal_margin = 32
+@export var vertical_margin = 32
 @export_range(0, 2) var scale: float = 1.0
 @export var anchor: Anchors = 2

@@ -30,15 +30,15 @@ func position_widget():
 	panel.position = rect.position
 
 	if conf.anchor & 1: # Right
-		x += rect.size.x - panel.get_rect().size.x - conf.margin_right
+		x += rect.size.x - panel.get_rect().size.x - conf.horizontal_margin
 	else: # Left
-		x += conf.margin_left
+		x += conf.horizontal_margin
 
 	if conf.anchor >> 1: # Bottom
-		y += rect.size.y - panel.get_rect().size.y - conf.margin_bottom
+		y += rect.size.y - panel.get_rect().size.y - conf.vertical_margin
 	else: # Top
 		var toolbar_height = 32
-		y += conf.margin_top + toolbar_height
+		y += conf.vertical_margin + toolbar_height
 
 	panel.position.x += x
 	panel.position.y += y
