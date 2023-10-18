@@ -4,6 +4,9 @@
 
 [resource]
 script = ExtResource("1_07s87")
-margin_left = 32
+margin_top = 32
+margin_right = 32
 margin_bottom = 32
+margin_left = 32
 scale = 0.5
+anchor = 2

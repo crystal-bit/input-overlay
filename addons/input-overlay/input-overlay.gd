@@ -17,20 +17,37 @@ func _enter_tree():
 	main_screen.resized.connect(update_panel)
 	update_panel()
 
+
 func update_panel():
 	scale_widget()
 	position_widget()
 
+
 func position_widget():
-	var rect: Rect2 = main_screen.get_global_rect()
-	panel.position.x = rect.position.x
-	panel.position.y = rect.position.y + rect.size.y - panel.get_rect().size.y
-	panel.position.x += conf.margin_left
-	panel.position.y -= conf.margin_bottom
+	var rect = main_screen.get_global_rect()
+	var x = 0
+	var y = 0
+	panel.position = rect.position
+
+	if conf.anchor & 1: # Right
+		x += rect.size.x - panel.get_rect().size.x - conf.margin_right
+	else: # Left
+		x += conf.margin_left
+
+	if conf.anchor >> 1: # Bottom
+		y += rect.size.y - panel.get_rect().size.y - conf.margin_bottom
+	else: # Top
+		var toolbar_height = 32
+		y += conf.margin_top + toolbar_height
+
+	panel.position.x += x
+	panel.position.y += y
+
 
 func scale_widget():
 	var panel_scale = Vector2(conf.scale, conf.scale)
 	panel.scale = panel_scale
+
 
 func on_main_screen_changed(scrn):
 	if scrn == "3D" or scrn == "2D":
