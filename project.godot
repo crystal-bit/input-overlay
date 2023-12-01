@@ -12,6 +12,7 @@ config_version=5
 
 config/name="input-overlay"
 config/features=PackedStringArray("4.2")
+config/icon="res://icon512px.png"
 
 [editor_plugins]
 
