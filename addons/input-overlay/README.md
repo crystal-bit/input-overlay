@@ -4,7 +4,7 @@
 
 Simple overlay used to show input events during tutorials.
 
-<video src="https://github.com/crystal-bit/input-overlay/assets/6860637/3231e21c-d04f-47ce-bf73-6032697b36ea" />
+https://github.com/crystal-bit/input-overlay/assets/6860637/3231e21c-d04f-47ce-bf73-6032697b36ea
 
 Overlay for:
 - SHIFT
