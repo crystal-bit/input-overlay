@@ -6,5 +6,5 @@
 script = ExtResource("1_07s87")
 horizontal_margin = 32
 vertical_margin = 32
-scale = 0.5
+scale = 1.0
 anchor = 2
