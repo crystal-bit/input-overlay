@@ -22,15 +22,14 @@ Overlay for:
 
 ## Configuration
 
-You can configure the overlay screen position and scale by editing the file `input-overlay-config.tres`. For now it is only possible to anchor the overlay in the bottom right corner
-(Support more anchor points, see https://github.com/crystal-bit/input-overlay/issues/5)
+You can configure the overlay screen position and scale via 
+`Project → Project Settings → addons/input-overlay/`.
 
-To change the appearance of the overlay you can edit the theme `overlay-theme.theme`. This theme contains settings for:
+To change the appearance of the overlay you can edit the theme
+`overlay-theme.theme`. This theme contains settings for:
 - Panel
 - Internal margins
 - Font size
-
-After changing any of these files it is necessary to reload the addon for the changes to be applied
 
 ### License
 

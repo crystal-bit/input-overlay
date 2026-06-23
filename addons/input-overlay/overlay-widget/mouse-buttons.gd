@@ -12,7 +12,6 @@ extends CenterContainer
 @onready var scroll_timer = $ScrollTimer
 
 
-
 func update_mouse_overlay(event):
 	var buttons = _get_buttons(event)
 	for button in buttons:
